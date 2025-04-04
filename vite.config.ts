@@ -28,9 +28,13 @@ export default defineConfig({
           'firebase-vendor': ['firebase']
         }
       }
+    },
+    commonjsOptions: {
+      include: [/firebase/, /node_modules/]
     }
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom']
+    include: ['react', 'react-dom', 'react-router-dom', 'firebase/app', 'firebase/auth', 'firebase/firestore'],
+    exclude: ['firebase']
   }
 })
