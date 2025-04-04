@@ -24,17 +24,20 @@ export default defineConfig({
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'ui-vendor': ['@headlessui/react', '@heroicons/react', 'framer-motion'],
-          'firebase-vendor': ['firebase']
+          'ui-vendor': ['@headlessui/react', '@heroicons/react', 'framer-motion']
         }
       }
-    },
-    commonjsOptions: {
-      include: [/firebase/, /node_modules/]
     }
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom', 'firebase/app', 'firebase/auth', 'firebase/firestore'],
-    exclude: ['firebase']
+    esbuildOptions: {
+      mainFields: ['module', 'main'],
+      resolveExtensions: ['.js', '.jsx', '.ts', '.tsx']
+    },
+    include: [
+      'react', 
+      'react-dom', 
+      'react-router-dom'
+    ]
   }
 })
