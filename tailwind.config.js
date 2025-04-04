@@ -1,0 +1,98 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        background: '#0a0a14',
+        'background-light': '#ffffff',
+        'background-dark': '#0a0a14',
+        card: '#1a1a24',
+        'card-light': '#ffffff',
+        'card-dark': '#1a1a24',
+        primary: '#ff8c38',
+        'primary-light': '#ffa366',
+        'primary-dark': '#e67e2e',
+        accent: '#ff6b6b',
+        'accent-light': '#ff8585',
+        'accent-dark': '#e65c5c',
+        border: '#2a2a34',
+        'border-light': '#e5e7eb',
+        'border-dark': '#2a2a34',
+        text: '#ffffff',
+        'text-light': '#1a1a24',
+        'text-dark': '#ffffff',
+        'text-secondary': '#a0aec0',
+        'text-secondary-light': '#4a5568',
+        'text-secondary-dark': '#a0aec0',
+        purple: '#8b5cf6',
+        'purple-light': '#a78bfa',
+        'purple-dark': '#7c3aed',
+        'accent-glow': '#ff6b6b',
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'sans-serif'],
+        serif: ['Georgia', 'serif'],
+      },
+      boxShadow: {
+        'glow': '0 0 20px rgba(255, 140, 56, 0.3)',
+        'glow-lg': '0 0 30px rgba(255, 140, 56, 0.4)',
+        'light': '0 2px 4px rgba(0, 0, 0, 0.05)',
+        'light-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025)',
+      },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'fade-in': 'fadeIn 0.5s ease-out',
+        'slide-up': 'slideUp 0.5s ease-out',
+        'ripple': 'ripple 1s linear infinite',
+        'glitch': 'glitch 1s linear infinite',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        fadeIn: {
+          'from': { opacity: '0' },
+          'to': { opacity: '1' },
+        },
+        slideUp: {
+          'from': { transform: 'translateY(20px)', opacity: '0' },
+          'to': { transform: 'translateY(0)', opacity: '1' },
+        },
+        ripple: {
+          '0%': { transform: 'scale(0)', opacity: '0.5' },
+          '100%': { transform: 'scale(4)', opacity: '0' },
+        },
+        glitch: {
+          '0%, 100%': { transform: 'translate(0)' },
+          '20%': { transform: 'translate(-2px, 2px)' },
+          '40%': { transform: 'translate(-2px, -2px)' },
+          '60%': { transform: 'translate(2px, 2px)' },
+          '80%': { transform: 'translate(2px, -2px)' },
+        },
+      },
+    },
+  },
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
+    require('tailwindcss-animate'),
+  ],
+  safelist: [
+    'shadow-glow',
+    'hover:shadow-glow',
+    'shadow-light-lg',
+    'hover:shadow-light-lg',
+    'animate-ripple',
+    'animate-float',
+    'animate-fade-in',
+    'animate-slide-up',
+    'animate-glitch',
+  ],
+} 
