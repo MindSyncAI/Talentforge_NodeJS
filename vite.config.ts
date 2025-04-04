@@ -27,7 +27,9 @@ export default defineConfig({
           'ui-vendor': ['@headlessui/react', '@heroicons/react', 'framer-motion']
         }
       }
-    }
+    },
+    chunkSizeWarningLimit: 1600,
+    cssCodeSplit: false
   },
   optimizeDeps: {
     esbuildOptions: {
@@ -39,5 +41,6 @@ export default defineConfig({
       'react-dom', 
       'react-router-dom'
     ]
-  }
+  },
+  base: '/'
 })
